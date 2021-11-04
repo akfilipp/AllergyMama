@@ -1,5 +1,5 @@
 @media(max-width: 1000px){
-    section>{
+    section{
         padding: 100px 50px;
     }
 }
@@ -20,10 +20,22 @@ body {
     background-image: url('images/pattern.png');
 }
 
-header {
-    padding: .5rem;
+@media(max-width: 1000px) {
+    header img{
+        width: ;
+    }
 }
 
+@media(max-width: 700px) {
+    header img {
+        width: 90vw;
+    }
+}
+
+header img {
+    padding: .5rem;
+  
+}
 
 
 .product-link {
@@ -43,21 +55,44 @@ a:hover {
 }
 
  /* Style the navbar */
- #sticky-navbar {
+ #navbar {
+    list-style: none;
+    display: flex;
     overflow: hidden;
     background-color:#a593c2;
-    padding: 0;
+    padding: 0px;
     margin: 0;
+    z-index: 3;
   }
+
+  #navbar li {
+    margin: 0 15px;
+      
+  }
+
+@media(max-width: 1000px) {
+    #navbar {
+        padding: 10px 10px;
+    }
+}
+
+@media(max-width: 700px) {
+    #navbar {
+        flex-direction: column;
+        font-size: 1.5em;
+        
+    }
+}
   
   /* Navbar links */
-  #sticky-navbar a {
-    float: left;
+  #navbar a {
+    
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px;
+    padding: 4px;
     text-decoration: none;
+    
   }
   
   /* Page content */
@@ -66,14 +101,14 @@ a:hover {
   }
   
   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky-navbar {
+  .sticky {
     position: fixed;
     top: 0;
     width: 100%;
   }
   
   /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky-navbar + .content {
+  .navbar + .content {
     padding-top: 60px;
   } 
 
@@ -89,9 +124,89 @@ a:hover {
   
 }
 
-.flex-item {
-    
-    border:10px solid #e6e4d9;
+@media(min-width: 1000px) {
+    .productmenu-item {
+        position: relative;
+        width: 33%;
+    }
+}
+
+@media(max-width: 700px) {
+    .productmenu-item {
+        position: relative;
+        width: 100%;
+        
+    }
+}
+  
+
+.product-link {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+.product-link h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-link img:first-child {
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+}
+
+.product-link img:last-child {
+    height: 100%;
+    width: 100%;
+    margin-right: 0;
+}
+.searchbox {
+    padding: 5px;
+    margin: 10px 10px;
+    width: 200px;
+}
+
+.main {
+    float: right;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+
+figure {
+    display: block;
+}
+
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #a593c2;  
+  color: #fff;
+  padding: 60px 0;
+  text-align: left;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+footer ul li:first-child {
+    margin-left: 0;
+}
+
+footer ul li:last-child {
+    margin-right: 0;
 }
 
 
@@ -109,70 +224,3 @@ nav {
     margin: 0 auto 20px;
 }
 */
-
-.searchbox {
-    padding: 5px;
-    margin: 10px 10px;
-    width: 200px;
-}
-
-.main {
-    float: right;
-    width: 70%;
-    margin-bottom: 20px;
-}
-
-
-
-header,
-section,
-
-aside,
-nav,
-main,
-article,
-figure {
-    display: block;
-}
-
-nav>ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav>ul>li {
-    float: left;
-}
-
-nav>ul>li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  background-color: #a593c2;  
-  color: #fff;
-  padding: 60px 0;
-  text-align: left;
-}
-
-footer ul {
-    display: flex;
-    margin-bottom: 25px;
-    font-size: 16px;
-}
-
-footer ul li:first-child {
-    margin-left: 0;
-}
-
-footer ul li:last-child {
-    margin-right: 0;
-}
