@@ -1,17 +1,28 @@
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-// Get the navbar
-var navbar = document.getElementById("navbar");
+hamburger.addEventListener("click", mobileMenu);
 
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
 
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
 function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
   } else {
-    navbar.classList.remove("sticky");
+    x.style.display = "block";
   }
-} 
+}
