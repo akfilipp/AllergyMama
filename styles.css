@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     margin-top: 0px;
     font-family: 'Source Sans Pro', Tahoma, Geneva, Verdana, sans-serif;
@@ -7,30 +14,70 @@ body {
     background-color: #e6e4d9;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    header {
+      display: none;
+      background-color: #a593c2;    
+    }
+}
+
 header img {
   max-width: 90vw;
   padding-left: .5rem;
 }
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
 .topnav {
-  overflow: hidden;
-  background-color: #a593c2;
-  position: relative;
+    display: flex;
+   
+    background-color: #a593c2;
+    position: relative;   
   }
   
   .topnav-logo {
   width: 30px;
   }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-  display: none;
-  }
-  
+
+.topnav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a593c2;
+}
+
+#navbar {
+    position: sticky;
+    z-index: 1; 
+}
+
+
   /* Style navigation menu links */
   .topnav a {
   color: white;
   padding: 14px 16px;
-  text-decoration: none;
+ 
   font-size: 1.5rem;
   display: block;
   }
@@ -48,25 +95,50 @@ header img {
   
   
   /* Change colors on mouse-over */
-  .topnav a.icon:hover {
+  .topnav-menu a:hover {
   background-color:#a8d047;
   color: black;
   }
   
-  
-    .nav-menu.active {
-        left: 0;
-    }
-  
-    .nav-item {
-        margin: 2.5rem 0;
-    }
-  
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
+    @media only screen and (max-width: 768px) {
+        .topnav-menu {
+            position: fixed;
+           
+            top: 5rem;
+            flex-direction: column;
+            
+            width: 100%;
+         
+            text-align: center;
+            transition: 0.3s;
+            
+        }
+    
+        .topnav-menu.active {
+            left: 0;
+        }
+    
+        .topnav-item {
+            margin: 2.5rem 0;
+        }
+        
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
 
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+    
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+    
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
 
 /*Product menu with Shopify links*/
 .box-grid {
@@ -154,6 +226,24 @@ a:hover {
 a:visited {
   color: #a8d047;
 }
+
+
+  /* Page content */
+  .content {
+    padding: 16px;
+  }
+    
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  #navbar + .content {
+    padding-top: 60px;
+  } 
 
 
 footer {
