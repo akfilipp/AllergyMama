@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>test page--</title> 
+    <title>navbar test</title> 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Allergy Mama">
@@ -12,42 +12,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="test-css.css">
-     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="../tests/test.css">
+
+
+    <script src="../tests/test.js" defer></script>
+
 </head>
 
 <body>
   <header>
     <a href="https://allergy-mama.myshopify.com/"  target="_blank">
-      <img src="images/logofull.png" alt="Allergy Mama logo with tagline">    
-    </a>            
-  </header>  
+      <img src="../images/logofull.png" alt="Allergy Mama logo with tagline">    
+    </a> 
+  </header>
 
-    <nav class="topnav">
-      <a href="index.html" target="_blank" class="active"><img src="images/flowerlogo.png" class="topnav-logo"></a>
-      
-      <!-- Navigation links (hidden by default) -->
-      <div id="myLinks">
-        
-        <a href="pages/homepage.html">About</a>
-        <a href="pages/productsoverview.html">Products</a>
-        <a href="pages/faqs.html">FAQs</a>
-      </div>
-  
-      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
+    <!--This navbar should be STICKY!-->  
+    <nav class="navbar">
+      <a href="index.html" target="_blank"><img class="navbar-logo" src="../images/flowerlogo.png" alt="flower logo icon with link to homepage"></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">FAQs</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
     </nav>
-    
-     
   
-  <main>
+
+  <main class="content">
     <!--Links to Product Categories-->
     <section class="box-grid">
       <div class="fancy-link box-flex">
-        <img src="images/clean-square.jpg" alt="hand and body soap" class="box-img">
+        <img src="../images/clean-square.jpg" alt="hand and body soap" class="box-img">
         <div class="overlay">
           <div class="category-name">
             <a href="https://allergy-mama.myshopify.com/collections/soap" target="_blank">Hand &amp Body Soap</a>
@@ -56,7 +64,7 @@
       </div>
 
       <div class="fancy-link box-flex">
-        <img src="images/laundry-grated-square.jpg" alt="laundry soap" class="box-img">
+        <img src="../images/laundry-grated-square.jpg" alt="laundry soap" class="box-img">
         <div class="overlay">
           <div class="category-name">
             <a href="https://allergy-mama.myshopify.com/collections/soap/products/just-laundry" target="_blank">Laundry Soap</a>
@@ -65,7 +73,7 @@
       </div>
 
       <div class="fancy-link box-flex">
-        <img src="images/someshine-square.jpg" alt="lip balm" class="box-img">
+        <img src="../images/someshine-square.jpg" alt="lip balm" class="box-img">
         <div class="overlay">
           <div class="category-name">
             <a href="https://allergy-mama.myshopify.com/collections/lip-balm" target="_blank">lip balm</a>
@@ -74,7 +82,7 @@
       </div>
 
       <div class="fancy-link box-flex">
-        <img src="images/bodybalm.jpg" alt="body balm" class="box-img">
+        <img src="../images/bodybalm.jpg" alt="body balm" class="box-img">
         <div class="overlay">
           <div class="category-name">
             <a href="images/comingsoon.jpg" target="_blank">body balm</a>
@@ -84,12 +92,10 @@
 
     </section>
 
-</main>
+  </main>
 
-<script src="test-js.js"></script>  
-      
+
 </body>
+
+
 </html>
-
-
-

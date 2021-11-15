@@ -28,6 +28,10 @@ a {
       display: none;
       background-color: #a593c2;    
     }
+
+    .topnav-logo {
+        display: none;
+    }
 }
 
 header img {
