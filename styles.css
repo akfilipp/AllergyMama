@@ -1,49 +1,88 @@
+/*Default style rules*/
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
-    margin-top: 0px;
     font-family: 'Source Sans Pro', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    color:black;   
+    margin: 0;
+    padding: 0;
     background-color: #e6e4d9;
 }
 
-li {
+ul, li {
     list-style: none;
-}
-
-a {
     text-decoration: none;
 }
 
-
-@media only screen and (max-width: 768px) {
-    header {
-      display: none;
-      background-color: #a593c2;    
-    }
-
-    .topnav-logo {
-        display: none;
-    }
+a:link {
+    text-decoration: none;
+    color: white;    
 }
+
+a:hover {
+  color: #000;
+}
+
+a:visited {
+  color: #a8d047;
+}
+
 
 header img {
-  max-width: 90vw;
-  padding-left: .5rem;
+    max-width: 90vw;
+    padding-left: .5rem;
+  }
+
+  /*NavBar Styles*/
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a593c2;
+    color: white; 
+   
 }
 
-.hamburger {
+.navbar-logo {
+    margin: .5rem;
+    width: 2.5rem;
     display: none;
 }
 
-.bar {
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: white;
+    padding: .5rem 1rem;
+}
+
+.nav-link:hover {
+    background-color: #a593c2;
+    color: black;
+}
+
+
+/*hamburger styles, default*/
+   .hamburger {
+    display: none;
+    padding: .5rem;
+    }
+
+    .bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -53,98 +92,59 @@ header img {
     background-color: #101010;
 }
 
-.topnav {
-    display: flex;
-   
-    background-color: #a593c2;
-    position: relative;   
-  }
-  
-  .topnav-logo {
-  width: 30px;
-  }
-
-.topnav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #a593c2;
-}
-
-#navbar {
-    position: sticky;
-    z-index: 1; 
-}
-
-
-  /* Style navigation menu links */
-  .topnav a {
-  color: white;
-  padding: 14px 16px;
- 
-  font-size: 1.5rem;
-  display: block;
-  }
-  
-  
-  /* Style the hamburger menu */
-  .topnav a.icon {
-  background: #a593c2;
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  }
-  
-  
-  /* Change colors on mouse-over */
-  .topnav-menu a:hover {
-  background-color:#a8d047;
-  color: black;
-  }
-  
-    @media only screen and (max-width: 768px) {
-        .topnav-menu {
-            position: fixed;
-           
-            top: 5rem;
-            flex-direction: column;
-            
-            width: 100%;
-         
-            text-align: center;
-            transition: 0.3s;
-            
-        }
-    
-        .topnav-menu.active {
-            left: 0;
-        }
-    
-        .topnav-item {
-            margin: 2.5rem 0;
-        }
-        
-        .hamburger {
-            display: block;
-            cursor: pointer;
-        }
-
-        .hamburger.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-    
-        .hamburger.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-    
-        .hamburger.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+/*Hide header and show hamburger menu on smaller screens*/
+@media only screen and (max-width: 768px) {
+    header {
+        display: none;
     }
 
-/*Product menu with Shopify links*/
+    .navbar-logo {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 2.75rem;
+        padding-right: 2.45rem;
+        flex-direction: column;
+        background-color: #1e697e;
+        opacity: .85;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: .5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/*Product category cards with Shopify links*/
 .box-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));

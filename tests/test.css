@@ -88,7 +88,7 @@ a:visited {
 }
 
 
-/*Show hamburger menu on smaller screens*/
+/*Hide header and show hamburger menu on smaller screens*/
 @media only screen and (max-width: 768px) {
     header {
         display: none;
@@ -102,6 +102,7 @@ a:visited {
         position: fixed;
         left: -100%;
         top: 2.75rem;
+        padding-right: 2.45rem;
         flex-direction: column;
         background-color: #1e697e;
         opacity: .85;

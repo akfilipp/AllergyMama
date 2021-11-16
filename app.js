@@ -1,52 +1,20 @@
-/*const hamburger = document.querySelector(".hamburger");
-const topnavMenu = document.querySelector(".topnav-menu");
+//Open nav links when hamburger is clicked//
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", mobileMenu);
 
 function mobileMenu() {
     hamburger.classList.toggle("active");
-    topnavMenu.classList.toggle("active");
+    navMenu.classList.toggle("active");
 }
 
+//Close hamburger when links are clicked//
+const navLink = document.querySelectorAll(".nav-link");
 
-const navLink = document.querySelectorAll(".topnav-link");
-
-topnavLink.forEach(n => n.addEventListener("click", closeMenu));
+navLink.forEach(n => n.addEventListener("click", closeMenu));
 
 function closeMenu() {
     hamburger.classList.remove("active");
-    topnavMenu.classList.remove("active");
+    navMenu.classList.remove("active");
 }
-
-
-/****OLD--Basic FontAwesome-based--Hamburger Menu***
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
-*/
-
-
-/****Sticky NavBar Behavior!****/
-
-// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the navbar
-var navbar = document.getElementById("navbar");
-
-// Get the offset position of the navbar
-var sticky = navbar.offsetTop;
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-} 
