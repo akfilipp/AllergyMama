@@ -154,12 +154,9 @@ header img {
   padding: 0;
 }
 
-/*Box image*/
 .box-img {
-    width: 100%;
-  
+    width: 100%;  
 }
-
 
 .fancy-link {
     position: relative;
@@ -176,12 +173,9 @@ header img {
   padding: .5em;
   margin: .25em;
   text-align: center;
-  font-size: 1.2rem;
- 
-  background-color: #f4ecf5;
- 
+  font-size: 1.2rem; 
+  background-color: #f4ecf5; 
 }
-
 
 .overlay {
   position: absolute;
@@ -190,8 +184,7 @@ header img {
   left: 0;
   right: 0;
   height: 100%;
-  width: 100%;
- 
+  width: 100%; 
   opacity: 0;
   transition: .5s ease;
   background-color: #245867;
@@ -217,46 +210,13 @@ opacity: .85;
   cursor: pointer;
 }
 
-a:link {
-    text-decoration: none;
-    color: white;
-    
-}
-
-a:hover {
-  color: #000;
-}
-
-a:visited {
-  color: #a8d047;
-}
-
-
-  /* Page content */
-  .content {
-    padding: 16px;
-  }
-    
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  #navbar + .content {
-    padding-top: 60px;
-  } 
-
-
 footer {
-  display: flex;
-  flex-direction: column;
-  background-color: #a593c2;  
-  color: #fff;
-  padding: 60px 0;
-  text-align: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #a593c2;  
+    color: #fff;
+    flex-wrap: wrap;
+    position: relative;      
 }
 
 footer ul {
@@ -276,14 +236,7 @@ footer ul li:last-child {
 }
 
 
-footer {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-  
-    min-height: 330px;
-    
-}
+
 
 footer:after {
     content: "";
